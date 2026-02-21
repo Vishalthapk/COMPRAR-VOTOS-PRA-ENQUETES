@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Painel de Votos</title>
+
+<script>
+function calcularTotal() {
+    var quantidade = document.getElementById("quantity").value;
+    var total = (quantidade / 100) * 10;
+    document.getElementById("total").innerHTML =
+        "Total: $" + total.toFixed(2) + " USD";
+}
+</script>
+
+</head>
+<body>
+
+<h2>Painel de Votos Instagram</h2>
+
+<label>Quantidade (100 - 2000):</label><br>
+<input type="number" id="quantity"
+       min="100" max="2000"
+       step="100"
+       value="100"
+       onchange="calcularTotal()"><br><br>
+
+<h3 id="total">Total: $10.00 USD</h3>
+
+<br>
+
+<!-- WhatsApp Button -->
+<a href="https://wa.me/916232773902?text=Olá,%20quero%20comprar%20votos%20para%20Instagram" target="_blank">
+    <button style="padding:10px 20px; font-size:16px; background:green; color:white; border:none;">
+        Pedir pelo WhatsApp
+    </button>
+</a>
+
+</body>
+</html>
