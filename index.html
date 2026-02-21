@@ -34,10 +34,6 @@ border-radius:12px;
 margin-bottom:20px;
 }
 
-h2{
-margin-top:0;
-}
-
 select, input{
 width:100%;
 padding:10px;
@@ -95,20 +91,28 @@ SMM Premium - Instagram Panel
 <div class="container">
 
 <div class="card">
-<h2>Serviços Instagram</h2>
+<h2>Pedido de Votos</h2>
 
 <div class="price-box">
 100 Votos = 10 Dólares
 </div>
 
-<label>Escolha o Serviço</label>
-<select>
+<label>Escolha Serviço</label>
+<select id="service">
 <option>Instagram Story Votes</option>
 <option>Instagram Post Votes</option>
 </select>
 
-<label>Quantidade (100 - 2000)</label>
-<select>
+<label>Escolha Opção (1 / 2 / 3 / 4)</label>
+<select id="option">
+<option>Opção 1</option>
+<option>Opção 2</option>
+<option>Opção 3</option>
+<option>Opção 4</option>
+</select>
+
+<label>Quantidade</label>
+<select id="quantity">
 <option>100</option>
 <option>200</option>
 <option>500</option>
@@ -118,16 +122,17 @@ SMM Premium - Instagram Panel
 </select>
 
 <label>Link do Post / Story</label>
-<input type="text" placeholder="Cole o link aqui">
+<input type="text" id="link" placeholder="Cole o link aqui">
 
-<button onclick="order()">Fazer Pedido</button>
+<label>Transaction ID (TXID)</label>
+<input type="text" id="txid" placeholder="Cole sua TXID aqui">
+
+<button onclick="sendOrder()">Enviar Pedido</button>
 
 </div>
 
 <div class="card">
-<h2>Wallet & Pagamento</h2>
-
-<p>Envie USDT (TRC20) para este endereço Binance:</p>
+<h2>Pagamento Binance USDT (TRC20)</h2>
 
 <div class="wallet-box">
 TDcPnC5umY37gwnqmjuYHvBxUnZKJqvAJ6
@@ -135,25 +140,32 @@ TDcPnC5umY37gwnqmjuYHvBxUnZKJqvAJ6
 
 <p><b>Network:</b> TRC20</p>
 
-<button onclick="confirmPayment()">
-Confirmar Pagamento via WhatsApp
-</button>
-
 </div>
 
 </div>
 
 <div class="footer">
-© 2026 SMM Premium Panel | Suporte WhatsApp: +916232773902
+© 2026 SMM Premium | WhatsApp: +916232773902
 </div>
 
 <script>
-function order(){
-alert("Pedido enviado! Faça o pagamento na seção Wallet.");
-}
+function sendOrder(){
 
-function confirmPayment(){
-window.open("https://wa.me/916232773902?text=Enviei%20pagamento%20USDT%20TRC20","_blank");
+var service = document.getElementById("service").value;
+var option = document.getElementById("option").value;
+var quantity = document.getElementById("quantity").value;
+var link = document.getElementById("link").value;
+var txid = document.getElementById("txid").value;
+
+var message = "Novo Pedido:%0A"+
+"Serviço: "+service+"%0A"+
+"Opção: "+option+"%0A"+
+"Quantidade: "+quantity+"%0A"+
+"Link: "+link+"%0A"+
+"TXID: "+txid;
+
+window.open("https://wa.me/916232773902?text="+message,"_blank");
+
 }
 </script>
 
