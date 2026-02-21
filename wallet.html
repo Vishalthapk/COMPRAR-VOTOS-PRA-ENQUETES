@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wallet - SMM Premium</title>
+<link rel="stylesheet" href="style.css">
+
+<style>
+.payment-box{
+background:#1e293b;
+padding:20px;
+border-radius:12px;
+margin-top:20px;
+}
+
+input{
+width:100%;
+padding:10px;
+margin:10px 0;
+border:none;
+border-radius:6px;
+}
+
+.qr{
+background:white;
+padding:15px;
+display:inline-block;
+border-radius:10px;
+margin-top:10px;
+word-break:break-all;
+}
+
+.notice{
+color:#22c55e;
+font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="sidebar">
+<h2>SMM Premium</h2>
+<a href="dashboard.html">Dashboard</a>
+<a href="#">New Order</a>
+<a href="#">Orders</a>
+<a href="wallet.html">Wallet</a>
+<a href="login.html">Logout</a>
+</div>
+
+<div class="main">
+
+<h1>Wallet & Deposits</h1>
+
+<div class="payment-box">
+<h2>Balance: $0.00</h2>
+<p>Add funds using Binance (USDT TRC20)</p>
+
+<h3>Binance Payment</h3>
+
+<p>Send USDT to this address:</p>
+
+<div class="qr">
+<p style="color:black;font-size:12px;">
+TDcPnC5umY37gwnqmjuYHvBxUnZKJqvAJ6
+</p>
+</div>
+
+<p class="notice">
+⚠ Network: TRC20 (Very Important)
+</p>
+
+<hr style="margin:20px 0;">
+
+<h3>Confirm Payment</h3>
+
+<input type="text" placeholder="Transaction ID (TXID)">
+<input type="number" placeholder="Amount Sent ($)">
+<a class="btn" href="https://wa.me/916232773902?text=Enviei%20um%20pagamento%20USDT%20TRC20" target="_blank">
+Confirm via WhatsApp
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
